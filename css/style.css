@@ -1,69 +1,8 @@
 body {
 	background: #111;
 	color: #ccc;
-	font-family: 'Open Sans', sans-serif;
 	margin: 0;
 	padding: 0;
-	font-size: 16px;
-}
-
-h1, h2, h3 {
-	text-transform: uppercase;
-	font-weight: 300;
-	text-align: center;
-}
-
-h1 {
-	color: #e43745;
-	font-size: 40px;
-	line-height: 38px;
-	margin-bottom: .5em;
-	font-weight: 300;
-}
-
-@media (max-width: 767px) {
-	h1 { font-size: 32px; }
-}
-
-h2 {
-	color: rgba(255, 255, 255, .75);
-	font-size: 26px;
-	letter-spacing: 1px;
-	font-weight: 300;
-	font-variant: normal;
-}
-
-@media (max-width: 767px) {
-	h2 { font-size: 20px; }
-}
-
-h3 {
-	color: rgba(255, 255, 255, 1);
-	font-size: 20px;
-	text-transform: uppercase;
-	font-weight: 300;
-	letter-spacing: 1px;
-	line-height: 1em;
-	margin-bottom: 8px;
-}
-
-h4 {
-	font-weight: 400;
-	margin: 32px 0 4px 0;
-}
-
-h4 a {
-	color: #F45D0E;
-}
-
-h4 a:hover {
-	color: #fff;
-}
-
-p {
-	line-height: 1.5em;
-	margin-bottom: 1em;
-	font-weight: 300;
 	font-size: 16px;
 }
 
@@ -76,29 +15,11 @@ a:hover {
 	color: #e43745;
 }
 
-.intro {
-	color: rgba(255, 255, 255, .75);
-	font-size: 16px;
-	letter-spacing: 1px;
-	font-weight: 300;
-	font-variant: normal;
-	position: relative;
-	z-index: 999;
-}
-
-
 h1#logo {
 	text-indent: -5000px;
-	overflow: hidden;
-	color: #fff;
 	margin-top: 2em;
 	background-image: url("../img/logo-aldryn.svg");
-	background-position: center 0;
 	background-repeat: no-repeat;
-	padding: 0;
-	background-size: 480px 60px;
-	height: 60px;
-	margin-bottom: 30px;
 }
 @media (max-width: 767px) {
 	h1#logo { background-size: 240px 60px; }
@@ -110,23 +31,6 @@ canvas#bg {
 	top: 0;
 }
 
-.head {
-	position: relative;
-	min-width: 320px;
-	max-width: 1024px;
-	margin: 0 auto;
-	text-align: center;
-}
-
 .section {
-	position: relative;
-	min-width: 320px;
-	max-width: 1024px;
-	margin:auto;
-	padding-top: 64px;
 	margin-top: 30%;
-}
-
-.section-head {
-	margin-bottom: 6em;
 }

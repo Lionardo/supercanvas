@@ -2,7 +2,7 @@
 
 (function(window) { "use strict";
 
-var scrollTips = [];
+
 var isMobile = /iPhone|iPad|android|Windows Phone|mobile/i.test(navigator.userAgent);
 
 Number.prototype.limit = function(min, max) {
@@ -25,23 +25,6 @@ var onresize = function() {
     var intro = $('#intro');
     var sectionWidth = section.width();
     var windowHeight = $(window).height();
-
-    // Set column count
-    var i;
-    for( i = 0; i < columnWidths.length; i++ ) {
-        var w = columnWidths[i];
-        if( sectionWidth < w ) { break; }
-    }
-    var columnsClass = 'columns-' + Math.max(i,1);
-
-    $('div.columns')
-        .removeClass('columns-1')
-        .removeClass('columns-2')
-        .removeClass('columns-3')
-        .addClass(columnsClass);
-
-
-    // Set scroll tip targets
 
 };
 
@@ -264,11 +247,16 @@ var draw = function() {
     // Test slow systems
     frameCount++;
     var seconds = (Date.now() - startTime)/1000;
-    if( seconds > 1 && testForSlowBrowsers ) {
+    if( seconds > 1 && testForSlowBrowsers ) { // kind of funny that firefox is one of them
+
         // Fewer than 20 frames in the last second? Disable background :/
-        if( frameCount < 20 ) {
+        var isFirefox = typeof InstallTrigger !== 'undefined';
+        if( frameCount < 20 && !isFirefox) {
             clearAnimation( backgroundAnimation );
             blackOverlay = 0;
+        // firefox has some issues with animations in js. Somehow the framerate is lower, while inspecting the frame rate there are some inconsistencys althought. This is a known issue to firefox. At the moment I will drop the framerate for firefox.
+        } else if (isFirefox) {
+            frameCount = 14;
         }
         testForSlowBrowsers = false;
     }
